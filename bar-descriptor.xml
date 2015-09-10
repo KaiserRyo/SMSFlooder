@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<qnx xmlns="http://www.qnx.com/schemas/application/1.0">
+    <env var="CASCADES_THEME" value="dark"/>
+    <id>com.nemory.smsflooderpro</id>
+    <name>SMS Flooder Pro</name>
+    <versionNumber>1.0.1</versionNumber>
+    <buildId>1</buildId>
+    <author>Nemory Development Studios</author>
+    <description>The SMS Flooder Pro application</description>
+    <splashScreens>
+       <image>splashQ10.png</image>
+       <image>splashZ10.png</image>
+    </splashScreens>
+    <icon>
+       <image>icon.png</image>
+    </icon>
+    
+    <configuration name="Device-Debug">
+       <platformArchitecture>armle-v7</platformArchitecture>
+       <asset path="arm/o.le-v7-g/SMSFlooderPro3" entry="true" type="Qnx/Elf">SMSFlooderPro3</asset>
+    </configuration>
+    <configuration name="Device-Release">
+       <entryPointType>Qnx/Cascades</entryPointType>
+       <platformArchitecture>armle-v7</platformArchitecture>
+       <asset path="arm/o.le-v7/SMSFlooderPro3.so" entry="true" type="Qnx/Elf">SMSFlooderPro3.so</asset>
+    </configuration>
+    <configuration name="Device-Profile">
+       <platformArchitecture>armle-v7</platformArchitecture>
+       <asset path="arm-p/o.le-v7-g/SMSFlooderPro3" entry="true" type="Qnx/Elf">SMSFlooderPro3</asset>
+    </configuration>
+    <configuration name="Simulator-Debug">
+       <platformArchitecture>x86</platformArchitecture>
+       <asset path="x86/o-g/SMSFlooderPro3" entry="true" type="Qnx/Elf">SMSFlooderPro3</asset>
+    </configuration>
+
+    <initialWindow>
+        <autoOrients>true</autoOrients>
+        <systemChrome>none</systemChrome>
+        <transparent>false</transparent>
+    </initialWindow>
+
+    <asset path="assets">assets</asset>
+
+    <asset path="translations" dest="qm">
+        <include name="*.qm"/>
+    </asset>
+    <asset path="assets/images/icon.png">icon.png</asset>
+    <asset path="assets/images/splashQ10.png">splashQ10.png</asset>
+    <asset path="assets/images/splashZ10.png">splashZ10.png</asset>
+
+    <permission system="true">run_native</permission>
+    <permission>run_when_backgrounded</permission>
+    <permission>access_sms_mms</permission>
+    <permission>access_pimdomain_messages</permission>
+    <permission>access_pimdomain_contacts</permission>
+    <env var="LD_LIBRARY_PATH" value="app/native/lib:/usr/lib/qt4/lib"/>
+
+</qnx>
